@@ -36,8 +36,9 @@ Oyun ve Uygulama Akademisi , Unity-37 ekibinin bootcamp projesi.
 
   **Sprint Notları:** User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
   
-  Daily Scrum: Daily Scrum toplantıları Discord üzerinden sesli konuşma ile yapılmaktadır, Whatsapp ve Discord üzerinden yazışma yolu ile de iletişim sağlanmaktadır. İlgili yazışma ekran görüntüleri Daily Scrum Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats
+  Daily Scrum: Daily Scrum toplantıları Discord üzerinden sesli konuşma ile yapılmaktadır, Whatsapp ve Discord üzerinden yazışma yolu ile de iletişim sağlanmaktadır. İlgili yazışma ekran görüntüleri Daily Scrum Readme'de tarafımızdan paylaşılmaktadır: !EKLENECEK!
   
+Sprint Board: 
 ![SPRİNT1](https://user-images.githubusercontent.com/91126291/167292648-3ed83d1a-70a2-4095-a1ac-7fb2e424e2ef.png)
 
 
