@@ -32,8 +32,6 @@ Oyun ve Uygulama Akademisi , Unity-37 ekibinin bootcamp projesi.
 * Felsefe seven oyuncular
 * 15-60 yaş arası oyuncular
 
-##### Product Backlog URL : 
-
 ## SPRINT 1
 
   **Sprint Notları:** User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
