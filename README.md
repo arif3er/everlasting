@@ -1,14 +1,44 @@
 # Everlasting
 Oyun ve Uygulama Akademisi , Unity-37 ekibinin bootcamp projesi.
 
-Takım İsmi
+## Team Everlasting
 
-Takım Elemanları
+###Takım Elemanları
 * Ceren Yöndem : Game Artist
 * Melike Birler : Game Artist / Product Owner 
 * Arif Can Üçer : Scrum Master / Developer
 * Mehmet Burak Hammuşoğlu : Developer
 * Alperen Enes Kale : Developer
 
+### Ürün İsmi
 
-Eklenecek...
+  - Everlasting
+
+### Ürün Açıklaması
+
+  Everlasting yani “Ölümsüz” anlamına gelen adıyla piksel bir korku-aksiyon oyunudur. Oyun ölümsüz olan ama duyduğu bir efsane üzerine ölümü bulmaya çalışan bir karakterin, gittiği eski büyülü bir kaledeki macerasını anlatacaktır. Ortaçağ ögeleri barındıran oyunumuz, oyuncuyu hem korkutacak hem de felsefi anlamda düşündürtecektir.
+  
+### Ürün Özellikleri
+
+* Labirent özelliği barındırdığından bulmaca çözerek ve savaşarak ilerlemek üzerine.
+* Oyuncuyu aniden çıkan düşmanlarla korkutma.
+* Temel amaç bilinse de ilerledikçe sonuç konusunda merak uyandırma.
+
+### Hedef Kitle
+
+* Piksel oyun seven oyuncular
+* Korku oyunu seven oyuncular
+* Ortaçağ dönemini seven oyuncular
+* Felsefe seven oyuncular
+* 15-60 yaş arası oyuncular
+
+##### Product Backlog URL : 
+
+## SPRINT 1
+
+  **Sprint Notları:** User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
+  
+  Daily Scrum: Daily Scrum toplantıları Discord üzerinden sesli konuşma ile yapılmaktadır, Whatsapp ve Discord üzerinden yazışma yolu ile de iletişim sağlanmaktadır. İlgili yazışma ekran görüntüleri Daily Scrum Readme'de tarafımızdan paylaşılmaktadır: Sprint 1 Daily Scrum Chats
+
+
+![Sprint Board](https://imgyukle.com/i/R1wcbq)
