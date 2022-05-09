@@ -42,4 +42,5 @@ Sprint Board:
 ![SPRİNT1](https://user-images.githubusercontent.com/91126291/167292648-3ed83d1a-70a2-4095-a1ac-7fb2e424e2ef.png)
 
 
-
+Discord ekran görüntüleri:
+[Sprint1 dc.docx](https://github.com/arif3er/everlasting/files/8654444/Sprint1.dc.docx)
