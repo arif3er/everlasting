@@ -14,6 +14,7 @@ Oyun ve Uygulama Akademisi , Unity-37 ekibinin bootcamp projesi.
 
   - Everlasting
 
+
 ### Ürün Açıklaması
 
   Everlasting yani “Ölümsüz” anlamına gelen adıyla piksel bir korku-aksiyon oyunudur. Oyun ölümsüz olan ama duyduğu bir efsane üzerine ölümü bulmaya çalışan bir karakterin, gittiği eski büyülü bir kaledeki macerasını anlatacaktır. Ortaçağ ögeleri barındıran oyunumuz, oyuncuyu hem korkutacak hem de felsefi anlamda düşündürtecektir.
@@ -61,5 +62,10 @@ Sprint Retrospective:
 
 Takım içi iletişimin daha sık olması gerektiğine karar verilmiştir.
 Tüm dosyaları ortak olarak paylaşacabileceğimiz bir dijital dosyalama alanı belirlenmiştir.
+
+Ürün Durumu: 
+
+Karakterlerin ve haritaların çizimleri : [Sprint1 Çizimler.docx](https://github.com/arif3er/everlasting/files/8664249/Sprint1.Cizimler.docx)
+
 
 
