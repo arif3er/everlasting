@@ -41,6 +41,8 @@ Oyun ve Uygulama Akademisi , Unity-37 ekibinin bootcamp projesi.
 Sprint Board: 
 ![SPRİNT1](https://user-images.githubusercontent.com/91126291/167292648-3ed83d1a-70a2-4095-a1ac-7fb2e424e2ef.png)
 
+Trello Linki:
+https://trello.com/b/spU8sV1X/everlasting-board
 
 Discord ekran görüntüleri:
 [Sprint1 dc.docx](https://github.com/arif3er/everlasting/files/8654444/Sprint1.dc.docx)
