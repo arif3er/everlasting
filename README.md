@@ -36,7 +36,10 @@ Oyun ve Uygulama Akademisi , Unity-37 ekibinin bootcamp projesi.
 
   **Sprint Notları:** User Story'ler product backlog'ların içine yazılmıştır. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir.
   
-  Daily Scrum: Daily Scrum toplantıları Discord üzerinden sesli konuşma ile yapılmaktadır, Whatsapp ve Discord üzerinden yazışma yolu ile de iletişim sağlanmaktadır. İlgili yazışma ekran görüntüleri Daily Scrum Readme'de tarafımızdan paylaşılmaktadır: !EKLENECEK!
+  Daily Scrum: Daily Scrum toplantıları Discord üzerinden sesli konuşma ile yapılmaktadır, Whatsapp ve Discord üzerinden yazışma yolu ile de iletişim sağlanmaktadır.     Discord ekran görüntüleri:
+  [Sprint1 dc.docx](https://github.com/arif3er/everlasting/files/8654444/Sprint1.dc.docx)
+  
+
   
 Sprint Board: 
 ![SPRİNT1](https://user-images.githubusercontent.com/91126291/167292648-3ed83d1a-70a2-4095-a1ac-7fb2e424e2ef.png)
@@ -44,5 +47,19 @@ Sprint Board:
 Trello Linki:
 https://trello.com/b/spU8sV1X/everlasting-board
 
-Discord ekran görüntüleri:
-[Sprint1 dc.docx](https://github.com/arif3er/everlasting/files/8654444/Sprint1.dc.docx)
+Sprint Review:
+
+Alınan kararlar: Günlük olarak Whatsapp ya da Discord’dan kim ne yaptığını ya da yapacağını kısaca anlatacaktır. Assetler ve spriteler üzerine yapılan araştırmalar sonucu tasarımcıların geliştirme ekibine teslim formatı kararlaştırılmıştır. Yapılacak oyunun türü, oynanış şekli, hikayesi ve mekanikleri kararlaştırılmıştır. Bir sonraki sprinte kadar oyun içi mekanının çoğunun bitmiş olması ve ana karakterin diğer karakterlerle olan etkileşimi tamamlanacaktır.
+Sprint Review katılımcıları: 
+Melike Birler
+Arif Can Üçer
+Alperen Kale
+Ceren Yöndem 
+Burak Hammuşoğlu
+
+Sprint Retrospective: 
+
+Takım içi iletişimin daha sık olması gerektiğine karar verilmiştir.
+Tüm dosyaları ortak olarak paylaşacabileceğimiz bir dijital dosyalama alanı belirlenmiştir.
+
+
