@@ -364,9 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d2288fbb30f3245a93afc520c95815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSpeed: 2
   animator: {fileID: 188157741}
-  mySpriteRenderer: {fileID: 188157744}
-  runSpeed: 4
 --- !u!1 &408477477
 GameObject:
   m_ObjectHideFlags: 0
