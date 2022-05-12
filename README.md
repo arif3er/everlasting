@@ -67,5 +67,8 @@ Tüm dosyaları ortak olarak paylaşacabileceğimiz bir dijital dosyalama alanı
 
 Karakterlerin ve haritaların çizimleri : [Sprint1 Çizimler.docx](https://github.com/arif3er/everlasting/files/8664249/Sprint1.Cizimler.docx)
 
+Oyun İçi Görüntü : 
+
+![unknown](https://user-images.githubusercontent.com/91126291/167713090-d90893cb-9054-42cf-9255-69c5a5f2189c.png)
 
 
