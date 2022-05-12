@@ -14,19 +14,23 @@ public class CharacterStats : MonoBehaviour
         inDead = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
     }
 
     public void takeDamage(float damage)
     {
         currentHealth -= damage;
+        
     }
 
     private void Death()
     {
         inDead = true;
+        Debug.Log("Öldün Kardeş");
     }
 }
