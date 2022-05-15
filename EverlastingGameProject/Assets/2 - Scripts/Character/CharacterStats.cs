@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
     private bool inDead;
-    
+    public Animator animator;
     public float maxHealth = 100f;
     public float currentHealth;
     void Start()
@@ -30,6 +30,7 @@ public class CharacterStats : MonoBehaviour
 
     private void Death()
     {
+        animator.SetBool("Death",true);
         inDead = true;
         Debug.Log("Öldün Kardeş");
     }
