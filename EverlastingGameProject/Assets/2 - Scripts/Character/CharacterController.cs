@@ -17,10 +17,18 @@ public class CharacterController : MonoBehaviour
       animator.SetFloat("Magnitude",movement.magnitude);  //Hareket ediyor kontrolü.
       
       transform.position = transform.position + movement * Time.deltaTime * characterSpeed;  //Hareket metodu.
+
+
+      if (Input.GetKeyDown(KeyCode.Space))
+      {
+         Attack();
+      }
    }
 
    private void Attack()
    {
+      //Atak animasyonu oynatılır.
+      animator.SetTrigger("Attack");
       
    }
 }
