@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class ProjectileFollowing : MonoBehaviour
 {
-    public float speed;
-    public float startFollowTime;
-    private float followTime; 
+    public float speed;             // Merminin hareket hizi
+    public float startFollowTime;   // Merminin havadaki yasam suresi (baslangicta ayarlanan referans degisken)
+    private float followTime;       // Merminin havadaki yasam suresi (iceride degistirilen degisken)
 
-    private Transform player;
-    private Vector2 target;
+    private Transform player;       // Player'in koordinati
 
+    private void OnEnable()
+    {
+        Invoke("DisableProjectile", 2f);
+    }
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        target = new Vector2(player.position.x, player.position.y);
-
         followTime = startFollowTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // Mermi Player'a dogru güdümlü olarak hareket eder.
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
-
+        // Havadaki yasam suresini tamamladiysa mermi silinir, 
         if (followTime <= 0)
         {
-            DestroyProjectile();
+            DisableProjectile();
+
             followTime = startFollowTime;
         } else
         {
@@ -43,16 +44,22 @@ public class ProjectileFollowing : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            DestroyProjectile();
+            DisableProjectile();
+
             //DamagePlayer
         } else if (collision.CompareTag("Enviorment"))
         {
-            DestroyProjectile();
+            DisableProjectile();
         }
     }
 
-    private void DestroyProjectile()
+    private void DisableProjectile()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke();
     }
 }

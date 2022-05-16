@@ -4,29 +4,49 @@ using UnityEngine;
 
 public class RangedNpcAI : MonoBehaviour
 {
-    public float speed;
-    public Transform target;
-    public float minDistance;
+    public float speed;                     // Hareket hizi
+    public float stoppingDistance;          // Player'a yaklasirken durma mesafesi
 
-    public GameObject projectile;
-    public float timeBetweenShots;
-    private float nextShotTime;
+    private float timeBetweenShots;         // Saldirilar arasindaki bekleme suresi (cooldown) (içerde degistirilen degisken)
+    public float startTimeBetweenShots;     // Saldirilar arasindaki bekleme suresi (cooldown) (baslangicta ayarlanan referans degisken)
 
-    private void Update()
+    private Transform player;               // Player'in koordianti
+    public Transform firePosition;          // Merminin spawn oldugu koordinat
+
+    void Start()
     {
-        if (Time.time > nextShotTime)
-        {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            nextShotTime = Time.time + timeBetweenShots;
-        }
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        timeBetweenShots = startTimeBetweenShots;
+    }
 
-        if (Vector2.Distance(transform.position, target.position) < minDistance)
+    void Update()
+    {
+        // Player'dan uzaktaysa player'a dogru ilerler, stoppingDistanece'a ulasinca durur.
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        } else if(Vector2.Distance(transform.position, player.position) < stoppingDistance)
+        {
+            transform.position = this.transform.position;
+        } 
+
+        // Bekleme süresi dolduysa mermiyi çagirir (saldirir) ve bekleme süresi yenilenir, dolmadiysa bekleme süresi azalmaya devam eder.
+        if(timeBetweenShots <= 0)
+        {
+            GameObject obj = ObjectPooler.current.GetPooledObject();
+
+            if (obj == null) return;
+
+            obj.transform.position = firePosition.position;
+            obj.transform.rotation = firePosition.rotation;
+            obj.SetActive(true);
+
+            timeBetweenShots = startTimeBetweenShots;
         }
         else
         {
-            // ATTACK
+            timeBetweenShots -= Time.deltaTime;
         }
+
     }
 }
