@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
+    
     private bool inDead;
     public Animator animator;
     public float maxHealth = 100f;

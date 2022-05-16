@@ -8,8 +8,12 @@ public class ProjectileFollowing : MonoBehaviour
     public float startFollowTime;   // Merminin havadaki yasam suresi (baslangicta ayarlanan referans degisken)
     private float followTime;       // Merminin havadaki yasam suresi (iceride degistirilen degisken)
 
+    [SerializeField]
+    private float damage;
+    
     private Transform player;       // Player'in koordinati
-
+    private CharacterStats characterStats;
+    
     private void OnEnable()
     {
         Invoke("DisableProjectile", 2f);
@@ -18,13 +22,13 @@ public class ProjectileFollowing : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        characterStats = player.GetComponent<CharacterStats>();
         followTime = startFollowTime;
     }
 
     void Update()
     {
-        // Mermi Player'a dogru güdümlü olarak hareket eder.
+        // Mermi Player'a dogru gï¿½dï¿½mlï¿½ olarak hareket eder.
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
         // Havadaki yasam suresini tamamladiysa mermi silinir, 
@@ -44,9 +48,11 @@ public class ProjectileFollowing : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            
             DisableProjectile();
 
             //DamagePlayer
+            characterStats.takeDamage(damage);
         } else if (collision.CompareTag("Enviorment"))
         {
             DisableProjectile();
