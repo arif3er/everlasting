@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class NpcStats : MonoBehaviour
 {
+    public float minDamage;
+    public float maxDamage;
+    public Animator animator;
+
     public float health;
-    private float currentHealth;
+    public float currentHealth;
+
+    public bool isDead = false;
 
     private void Start()
     {
@@ -16,16 +22,22 @@ public class NpcStats : MonoBehaviour
     {
         if (currentHealth <= 0)
         {
-            Die();
+            isDead = true;
+            animator.Play("Die");
+            Invoke("DestroyNPC", 1);
         }
     }
 
-    private void TakeDamage(float damage)
+    public void TakeDamage(float minDamage, float maxDamage)
     {
-        health -= damage;
+        animator.Play("Hurt");
+        float damage = Random.Range(minDamage, maxDamage);
+        currentHealth -= damage;
     }
 
-    private void Die()
+
+
+    private void DestroyNPC()
     {
         Destroy(gameObject);
     }

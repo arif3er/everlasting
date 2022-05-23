@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileFollowing : MonoBehaviour
+public class ProjectileFollowing : CharacterStats
 {
     public float speed;             // Merminin hareket hizi
     public float startFollowTime;   // Merminin havadaki yasam suresi (baslangicta ayarlanan referans degisken)
     private float followTime;       // Merminin havadaki yasam suresi (iceride degistirilen degisken)
 
-    [SerializeField]
-    private float damage;
-    
+    public float minDamage;
+    public float maxDamage;
+
     private Transform player;       // Player'in koordinati
-    private CharacterStats characterStats;
+    public CharacterStats characterStats;
     
     private void OnEnable()
     {
@@ -22,7 +22,6 @@ public class ProjectileFollowing : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        characterStats = player.GetComponent<CharacterStats>();
         followTime = startFollowTime;
     }
 
@@ -48,12 +47,9 @@ public class ProjectileFollowing : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            
+            characterStats.TakeDamage(minDamage,maxDamage);
             DisableProjectile();
-
-            //DamagePlayer
-            characterStats.takeDamage(damage);
-        } else if (collision.CompareTag("Enviorment"))
+        } else if (collision.CompareTag("Obstacle"))
         {
             DisableProjectile();
         }

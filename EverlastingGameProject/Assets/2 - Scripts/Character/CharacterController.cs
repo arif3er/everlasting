@@ -15,7 +15,21 @@ public class CharacterController : MonoBehaviour
 
    public void Start()
    {
-      myRB = GetComponent<Rigidbody2D>();
+        GameObject[] arr = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject obj in arr)
+        {
+            Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        }
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = 0; j < arr.Length; j++)
+            {
+                Physics2D.IgnoreCollision(arr[i].GetComponent<Collider2D>(), arr[j].GetComponent<Collider2D>());
+            }
+        }
+
+        myRB = GetComponent<Rigidbody2D>();
    }
 
    private void Update()

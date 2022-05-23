@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float damage;
+    public NpcStats npcStats;
+    public GameObject player;
+    public CharacterStats characterStats;
     public float speed;
+    public KrokAI krokAI;
 
     Vector3 targetPosition;
 
     private void Start()
     {
         targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        characterStats = player.GetComponent<CharacterStats>();
     }
 
     private void Update()
     {
-
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-    
-        if(transform.position == targetPosition)
+
+        if (transform.position == targetPosition)
         {
             DestroyProjectile();
-        }   
+        }
     }
 
 
@@ -30,10 +34,10 @@ public class Projectile : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            characterStats.TakeDamage(npcStats.minDamage, npcStats.maxDamage);
             DestroyProjectile();
-            //DamagePlayer
         }
-        else if (collision.CompareTag("Enviorment"))
+        else if (collision.CompareTag("Obstacle"))
         {
             DestroyProjectile();
         }

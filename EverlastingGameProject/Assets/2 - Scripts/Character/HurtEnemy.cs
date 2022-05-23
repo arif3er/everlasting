@@ -5,23 +5,16 @@ using UnityEngine;
 
 public class HurtEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private NpcStats npcStats;
+    public CharacterStats characterStats;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        npcStats = other.GetComponent<NpcStats>();
+
         if (other.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            npcStats.TakeDamage(characterStats.minAttackDamge, characterStats.maxAttackDamge);
         }
     }
 }

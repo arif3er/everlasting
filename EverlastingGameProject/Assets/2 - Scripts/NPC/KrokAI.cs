@@ -1,24 +1,26 @@
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI : MonoBehaviour
+public class KrokAI : MonoBehaviour
 {
     public Transform player;
     public Transform enemyGFX;
     public Animator animator;
     public CharacterStats characterStats;
+    private NpcStats npcStats;
 
-    public float minDamage;
-    public float maxDamage;
-    public float attackSpeed;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
-    public float attackRange;
     public float aggroDistance;
-    public float stoppingDistance;
+    public float attackRange;
+    public float attackSpeed;
+    public float attackSlowness;
+    //public float stoppingDistance;
 
     private Path path;
     int currentWaypoint = 0;
+
+    private bool isDead = false;
     private bool isAggresive = false;
     private bool isCooldown = false;
 
@@ -27,6 +29,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        npcStats = GetComponent<NpcStats>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -53,23 +56,37 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         SearchAndAttack();
+
+        isDead = npcStats.isDead;
     }
 
     private void FixedUpdate()
     {
+        if (isDead)
+        {
+            return;
+        }
 
-        if (path == null) return;
-        if (isAggresive == false) return;
+        if (path == null) 
+        {
+            animator.SetFloat("Speed", 0);
+            return;
+        }
+        if (isAggresive == false)
+        {
+            animator.SetFloat("Speed", 0);
+            return;
+        } 
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
             return;
         }
-        
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
 
+        animator.SetFloat("Speed", 1);
         rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -100,17 +117,18 @@ public class EnemyAI : MonoBehaviour
 
     void SearchAndAttack()
     {
-        if ((Vector2.Distance(transform.position, player.position) > aggroDistance)) 
+        if ((Vector2.Distance(transform.position, player.position) > aggroDistance))
         {
             isAggresive = false;
-        }else
+        }
+        else
         {
             isAggresive = true;
         }
 
         if ((Vector2.Distance(transform.position, player.position) < attackRange) && !isCooldown)
         {
-            Invoke("Attack", 0.5f);
+            Invoke("Attack", attackSlowness);
             Invoke("ResetCooldown", attackSpeed);
             //animasyonu 1 kere oynatcak
             isCooldown = true;
@@ -121,7 +139,7 @@ public class EnemyAI : MonoBehaviour
     {
         if ((Vector2.Distance(transform.position, player.position) < attackRange))
         {
-            characterStats.TakeDamage(minDamage,maxDamage);
+            characterStats.TakeDamage(npcStats.minDamage, npcStats.maxDamage);
         }
     }
 
@@ -129,7 +147,4 @@ public class EnemyAI : MonoBehaviour
     {
         isCooldown = false;
     }
-
-
-
 }

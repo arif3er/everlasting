@@ -1,32 +1,35 @@
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI : MonoBehaviour
+public class BuzzAI : MonoBehaviour
 {
     public Transform player;
     public Transform enemyGFX;
+    public Transform firePosition;
     public Animator animator;
-    public CharacterStats characterStats;
+    public GameObject projectile;
+    private NpcStats npcStats;
 
-    public float minDamage;
-    public float maxDamage;
-    public float attackSpeed;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
-    public float attackRange;
     public float aggroDistance;
-    public float stoppingDistance;
+    public float attackRange;
+    public float attackSpeed;
 
     private Path path;
     int currentWaypoint = 0;
+
     private bool isAggresive = false;
+    private bool isSafeRange = false;
     private bool isCooldown = false;
+    public bool isDead = false;
 
     private Seeker seeker;
     private Rigidbody2D rb;
 
     private void Start()
     {
+        npcStats = GetComponent<NpcStats>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -53,23 +56,41 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         SearchAndAttack();
+
+        isDead = npcStats.isDead;
     }
 
     private void FixedUpdate()
     {
-
-        if (path == null) return;
-        if (isAggresive == false) return;
+        if (isDead)
+        {
+            return;
+        }
+        if (path == null) 
+        {
+            animator.SetFloat("Speed", 0);
+            return;
+        }
+        if (!isAggresive)
+        {
+            animator.SetFloat("Speed", 0);
+            return;
+        }
+        if (isSafeRange)
+        {
+            animator.SetFloat("Speed", 0);
+            return;
+        }
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
             return;
         }
-        
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
 
+        animator.SetFloat("Speed", 1);
         rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -79,7 +100,8 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if (force.x >= 0.01f)
+
+        if (force.x >= 0.01f )
         {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -91,7 +113,7 @@ public class EnemyAI : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        // Dusman?n menziline ait gizmoslar.
+        // Dusmanin menziline ait gizmoslar.
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, aggroDistance);
         Gizmos.color = Color.red;
@@ -100,36 +122,41 @@ public class EnemyAI : MonoBehaviour
 
     void SearchAndAttack()
     {
-        if ((Vector2.Distance(transform.position, player.position) > aggroDistance)) 
-        {
-            isAggresive = false;
-        }else
+        if ((Vector2.Distance(transform.position, player.position) < aggroDistance))
         {
             isAggresive = true;
         }
+        else
+        {
+            isAggresive = false;
+        }
+
 
         if ((Vector2.Distance(transform.position, player.position) < attackRange) && !isCooldown)
         {
-            Invoke("Attack", 0.5f);
+            animator.Play("Buzz_Attack");
+            Invoke("Attack", 0.3f);
             Invoke("ResetCooldown", attackSpeed);
-            //animasyonu 1 kere oynatcak
             isCooldown = true;
+            isSafeRange = true;
+        }
+
+        if ((Vector2.Distance(transform.position, player.position) > attackRange))
+        {
+            isSafeRange = false;
         }
     }
 
     void Attack()
     {
-        if ((Vector2.Distance(transform.position, player.position) < attackRange))
-        {
-            characterStats.TakeDamage(minDamage,maxDamage);
-        }
+        var dir = player.position - transform.position;
+        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        GameObject p = Instantiate(projectile, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
+        p.GetComponent<Projectile>().npcStats = GetComponent<NpcStats>();
     }
 
     void ResetCooldown()
     {
         isCooldown = false;
     }
-
-
-
 }

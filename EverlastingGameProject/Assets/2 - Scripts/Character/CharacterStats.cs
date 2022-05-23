@@ -7,8 +7,13 @@ public class CharacterStats : MonoBehaviour
     
     private bool inDead;
     public Animator animator;
+
     public float maxHealth = 100f;
     public float currentHealth;
+
+    public float minAttackDamge = 30;
+    public float maxAttackDamge = 40;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -23,10 +28,10 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float minDamage, float maxDamage)
     {
+        float damage = Random.Range(minDamage, maxDamage);
         currentHealth -= damage;
-        
     }
 
     private void Death()
