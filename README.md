@@ -51,6 +51,7 @@ https://trello.com/b/spU8sV1X/everlasting-board
 Sprint Review:
 
 Alınan kararlar: Günlük olarak Whatsapp ya da Discord’dan kim ne yaptığını ya da yapacağını kısaca anlatacaktır. Assetler ve spriteler üzerine yapılan araştırmalar sonucu tasarımcıların geliştirme ekibine teslim formatı kararlaştırılmıştır. Yapılacak oyunun türü, oynanış şekli, hikayesi ve mekanikleri kararlaştırılmıştır. Bir sonraki sprinte kadar oyun içi mekanının çoğunun bitmiş olması ve ana karakterin diğer karakterlerle olan etkileşimi tamamlanacaktır.
+
 Sprint Review katılımcıları: 
 Melike Birler
 Arif Can Üçer
@@ -70,5 +71,36 @@ Karakterlerin ve haritaların çizimleri : [Sprint1 Çizimler.docx](https://gith
 Oyun İçi Görüntü : 
 
 ![unknown](https://user-images.githubusercontent.com/91126291/167713090-d90893cb-9054-42cf-9255-69c5a5f2189c.png)
+
+## SPRINT 2
+
+**Sprint Notları:**: User Story'ler product backlog'ların içine yazılmaya devam ediyor. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir durumda.
+
+Daily Scrum: Her gün Whatsapp üzerinden “Dün ne yaptınız, bugün ne yapacaksınız?” şeklinde bir kalıp üzerinden giden günlük konuşmalar yapılarak takım üyelerinin neler yaptığı hakkında konuşulmaktadır.
+
+Sprint Board: 
+![trello2](https://user-images.githubusercontent.com/91126291/169712533-5beed04f-79af-48ad-b8c5-82d4ae105f25.png)
+
+Trello Linki:
+https://trello.com/b/spU8sV1X/everlasting-board
+
+Sprint Review:
+Alınan kararlar: Günlük olarak Whatsapp’tan kim ne yaptığını ya da yapacağını kısaca anlatmaya devam edecektir. Teslim zamanına kalan süre düşünülerek oyunun gidişatı değişime uğramalı mı diye konuşuldu.
+
+Sprint Review katılımcıları:
+Melike Birler
+Arif Can Üçer
+Alperen Kale 
+Ceren Yöndem 
+Burak Hammuşoğlu
+
+Sprint Retrospective:
+Obje tasarımlarının çoğunun bittiği öğrenildi. Düşman tasarımlarına yenilerinin eklenecektir ve karakter tasarımının silah kullanım animasyonları üzerinde tekrar çalışılacaktır.
+
+Ürün Durumu: 
+Oyun İçi Görüntü : 
+![ingame](https://user-images.githubusercontent.com/91126291/169712861-ba0c86cc-4d61-4bc9-9b23-35625bbb6483.png)
+
+
 
 
