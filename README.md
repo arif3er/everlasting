@@ -76,6 +76,8 @@ Oyun İçi Görüntü :
 
 **Sprint Notları:**: User Story'ler product backlog'ların içine yazılmaya devam ediyor. Product backlog item'lara tıklandığında hikayelerin detayları okunabilir durumda.
 
+* Puanlama Mantığı: Proje boyunca toplanması gereken 70 puan vardır. Bu sprintte NPC, ana karakter, çevre tasarım assetleri gibi önemli konular tamamlandığı için en azından 35 puanlık bir ilerleme düşünüldü.
+
 Daily Scrum: Her gün Whatsapp üzerinden “Dün ne yaptınız, bugün ne yapacaksınız?” şeklinde bir kalıp üzerinden giden günlük konuşmalar yapılarak takım üyelerinin neler yaptığı hakkında konuşulmaktadır.
 
 Sprint Board: 
