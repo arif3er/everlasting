@@ -80,6 +80,8 @@ Oyun İçi Görüntü :
 
 Daily Scrum: Her gün Whatsapp üzerinden “Dün ne yaptınız, bugün ne yapacaksınız?” şeklinde bir kalıp üzerinden giden günlük konuşmalar yapılarak takım üyelerinin neler yaptığı hakkında konuşulmaktadır.
 
+Ekran Görüntüleri :  [Belge 12.pdf](https://github.com/arif3er/everlasting/files/8773849/Belge.12.pdf)
+
 Sprint Board: 
 ![trello2](https://user-images.githubusercontent.com/91126291/169712533-5beed04f-79af-48ad-b8c5-82d4ae105f25.png)
 
@@ -102,6 +104,7 @@ Obje tasarımlarının çoğunun bittiği öğrenildi. Düşman tasarımlarına 
 Ürün Durumu: 
 Oyun İçi Görüntü : 
 ![ingame](https://user-images.githubusercontent.com/91126291/169712861-ba0c86cc-4d61-4bc9-9b23-35625bbb6483.png)
+
 
 
 
