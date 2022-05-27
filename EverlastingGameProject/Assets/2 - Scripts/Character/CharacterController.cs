@@ -9,8 +9,9 @@ public class CharacterController : MonoBehaviour
    private float attackTime = .25f;
    private float attackCounter = .25f;
    private bool isAttacking;
-   private Rigidbody2D myRB;
    
+   private Rigidbody2D myRB;
+   private Vector2 movement;
    public Animator animator;
 
    public void Start()
@@ -34,13 +35,14 @@ public class CharacterController : MonoBehaviour
 
    private void Update()
    {
-      Vector3 movement = new Vector3(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"),0.0f);
+      movement.x = Input.GetAxis("Horizontal");
+      movement.y = Input.GetAxis("Vertical");
       
       animator.SetFloat("Horizontal",movement.x);         //Yatay düzlemde hareket girdisi.
       animator.SetFloat("Vertical",movement.y);           //Dikey düzlemde hareket girdisi.
       animator.SetFloat("Magnitude",movement.magnitude);  //Hareket ediyor kontrolü.
       
-      transform.position = transform.position + movement * Time.deltaTime * characterSpeed;  //Hareket metodu.
+      //transform.position = transform.position + movement * Time.deltaTime * characterSpeed;  //Hareket metodu.
       
       if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical")==1 || Input.GetAxisRaw("Vertical")== -1)
       {
@@ -48,8 +50,6 @@ public class CharacterController : MonoBehaviour
          animator.SetFloat("LastMoveY", Input.GetAxisRaw("Vertical"));
 
       }
-      
-      
       
 
       if (Input.GetKeyDown(KeyCode.Space))
@@ -68,5 +68,10 @@ public class CharacterController : MonoBehaviour
          }
 
       }
+   }
+
+   private void FixedUpdate()
+   {
+      myRB.MovePosition(myRB.position + movement * characterSpeed * Time.fixedDeltaTime);
    }
 }

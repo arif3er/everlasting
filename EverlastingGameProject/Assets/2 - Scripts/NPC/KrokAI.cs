@@ -9,16 +9,18 @@ public class KrokAI : MonoBehaviour
     public CharacterStats characterStats;
     private NpcStats npcStats;
 
+
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     public float aggroDistance;
     public float attackRange;
     public float attackSpeed;
     public float attackSlowness;
+    public float patrolWaitTime;
     //public float stoppingDistance;
 
     private Path path;
-    int currentWaypoint = 0;
+    private int currentWaypoint = 0;
 
     private bool isDead = false;
     private bool isAggresive = false;
@@ -128,9 +130,10 @@ public class KrokAI : MonoBehaviour
 
         if ((Vector2.Distance(transform.position, player.position) < attackRange) && !isCooldown)
         {
+            CalculateLookAt();
+            animator.Play("Krok_Attack");
             Invoke("Attack", attackSlowness);
             Invoke("ResetCooldown", attackSpeed);
-            //animasyonu 1 kere oynatcak
             isCooldown = true;
         }
     }
@@ -140,6 +143,18 @@ public class KrokAI : MonoBehaviour
         if ((Vector2.Distance(transform.position, player.position) < attackRange))
         {
             characterStats.TakeDamage(npcStats.minDamage, npcStats.maxDamage);
+        }
+    }
+
+    void CalculateLookAt()
+    {
+        if (transform.position.x > player.position.x)
+        {
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else if (transform.position.x < player.position.x)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
     }
 

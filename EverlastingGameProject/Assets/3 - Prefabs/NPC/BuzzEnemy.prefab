@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3229330447537592484}
   - component: {fileID: 3229330447537592485}
   - component: {fileID: 3229330447537592486}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BuzzGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3229330447537592487}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3229330447857285759}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 3229330447857285752}
   - component: {fileID: 3229330447857285758}
   - component: {fileID: 291190982}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BuzzEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ Transform:
   m_GameObject: {fileID: 3229330447857285636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.89, y: 0.64, z: -0.27901766}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3229330447537592484}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 3229330448289333592}
   - component: {fileID: 3229330448289333599}
   - component: {fileID: 932713028}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,6 +373,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60b673ed177803948927f703d2313e1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minIntensity: 0
+  maxIntensity: 0
+  minInnerRadius: 0
+  maxInnerRadius: 0
+  minOuterRadius: 0
+  maxOuterRadius: 0
+  minFalloffStrength: 0
+  maxFalloffStrength: 0
 --- !u!1 &3229330448520444767
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3229330448520444766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FirePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

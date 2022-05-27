@@ -100,8 +100,7 @@ public class BuzzAI : MonoBehaviour
             currentWaypoint++;
         }
 
-
-        if (force.x >= 0.01f )
+        if (force.x >= 0.01f)
         {
             enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
         }
@@ -134,6 +133,7 @@ public class BuzzAI : MonoBehaviour
 
         if ((Vector2.Distance(transform.position, player.position) < attackRange) && !isCooldown)
         {
+            CalculateLookAt();
             animator.Play("Buzz_Attack");
             Invoke("Attack", 0.3f);
             Invoke("ResetCooldown", attackSpeed);
@@ -153,6 +153,18 @@ public class BuzzAI : MonoBehaviour
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         GameObject p = Instantiate(projectile, transform.position, Quaternion.AngleAxis(angle, Vector3.forward));
         p.GetComponent<Projectile>().npcStats = GetComponent<NpcStats>();
+    }
+
+    void CalculateLookAt()
+    {
+        if (transform.position.x > player.position.x)
+        {
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else if (transform.position.x < player.position.x)
+        {
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+        }
     }
 
     void ResetCooldown()

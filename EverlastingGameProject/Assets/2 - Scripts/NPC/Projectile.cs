@@ -8,7 +8,6 @@ public class Projectile : MonoBehaviour
     public GameObject player;
     public CharacterStats characterStats;
     public float speed;
-    public KrokAI krokAI;
 
     Vector3 targetPosition;
 

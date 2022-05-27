@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3813840286205848985}
   - component: {fileID: 3813840286205848984}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 182446600}
   - component: {fileID: 3813840286686400671}
   - component: {fileID: 182446601}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: KrokEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 3813840287121484450}
   - component: {fileID: 3813840287121484449}
   - component: {fileID: 1663602747}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: KrokGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
