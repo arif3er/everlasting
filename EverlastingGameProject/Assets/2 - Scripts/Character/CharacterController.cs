@@ -48,9 +48,7 @@ public class CharacterController : MonoBehaviour
       {
          animator.SetFloat("LastMoveX", Input.GetAxisRaw("Horizontal"));
          animator.SetFloat("LastMoveY", Input.GetAxisRaw("Vertical"));
-
       }
-      
 
       if (Input.GetKeyDown(KeyCode.Space))
       {

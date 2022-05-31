@@ -11,7 +11,7 @@ public class LightningEffect : MonoBehaviour
 
     [Range(0f, 10f)]
     [SerializeField]
-    private float intensityOfScene;
+    private float intensity;
 
     [Range(0f, 10f)]
     [SerializeField]
@@ -47,7 +47,7 @@ public class LightningEffect : MonoBehaviour
 
     private void ResetLight()
     {
-        myLight.intensity = 0f;
+        myLight.intensity = intensity;
     }
 
     private void HighFlicker()
