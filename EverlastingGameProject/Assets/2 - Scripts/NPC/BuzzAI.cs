@@ -22,7 +22,6 @@ public class BuzzAI : MonoBehaviour
     private bool isAggresive = false;
     private bool isSafeRange = false;
     private bool isCooldown = false;
-    public bool isDead = false;
 
     private Seeker seeker;
     private Rigidbody2D rb;
@@ -55,14 +54,17 @@ public class BuzzAI : MonoBehaviour
 
     private void Update()
     {
-        SearchAndAttack();
+        if (npcStats.isDead)
+        {
+            return;
+        }
 
-        isDead = npcStats.isDead;
+        SearchAndAttack();
     }
 
     private void FixedUpdate()
     {
-        if (isDead)
+        if (npcStats.isDead)
         {
             return;
         }
