@@ -2,7 +2,15 @@ fileFormatVersion: 2
 guid: 75bedf7a6e5b48247809d5477cd0859f
 NativeFormatImporter:
   externalObjects: {}
+<<<<<<< HEAD:EverlastingGameProject/Assets/7 - Animations/Character/Attack_Axe_Left.anim.meta
   mainObjectFileID: 7400000
+=======
+<<<<<<< Updated upstream
+  mainObjectFileID: 11400000
+=======
+  mainObjectFileID: 0
+>>>>>>> Stashed changes
+>>>>>>> MapMaking&BossAI:EverlastingGameProject/Assets/8 - Effects/PostProcess/Volume Profile.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
