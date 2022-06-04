@@ -14,22 +14,44 @@ public class NpcStats : MonoBehaviour
 
     public bool isDead = false;
 
+    public AudioClip[] npcSounds;
+    private AudioSource audioSource;
+
     private void Start()
     {
         currentHealth = health;
+        audioSource = GetComponentInChildren<AudioSource>();
     }
-   
-    public void TakeDamage(float minDamage, float maxDamage)
+
+    private void Update()
     {
-        animator.Play("Hurt");
-        float damage = Random.Range(minDamage, maxDamage);
-        currentHealth -= damage;
         if (currentHealth <= 0)
         {
             isDead = true;
+            PlayDieSound();
             animator.Play("Die");
             Invoke("DestroyNPC", deathTimeOut);
         }
+    }
+
+    public void TakeDamage(float minDamage, float maxDamage)
+    {
+        PlayHurtSound();
+        animator.Play("Hurt");
+        float damage = Random.Range(minDamage, maxDamage);
+        currentHealth -= damage;
+        
+    }
+
+    void PlayHurtSound()
+    {
+        audioSource.clip = npcSounds[0];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+    void PlayDieSound()
+    {
+        audioSource.clip = npcSounds[1];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
     private void DestroyNPC()

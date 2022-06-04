@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3773683493918987493}
   m_LocalRotation: {x: -0, y: -0, z: 0.9998549, w: -0.017033953}
-  m_LocalPosition: {x: -0, y: 0.61, z: 0}
+  m_LocalPosition: {x: -0.007, y: 0.496, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,9 +124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightningRepeatTime: 5
-  intensity: 0.5
-  highFlickerMin: 6
-  highFlickerMax: 7
+  intensity: 0.4
+  highFlickerMin: 5.5
+  highFlickerMax: 6.5
   lowFlickerMin: 0.5
   lowFlickerMax: 1
 --- !u!1 &4896381841189130882

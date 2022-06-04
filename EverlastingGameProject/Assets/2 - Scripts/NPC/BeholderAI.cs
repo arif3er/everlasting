@@ -69,7 +69,7 @@ public class BeholderAI : MonoBehaviour
         if (isDead) return;
 
         redLaser.GetComponent<LineRenderer>().SetColors(Color.red, Color.red);
-        redLaser.SetActive(true);
+        Invoke("SetActive", 2f);
         animator.Play("Beholder_RedLaser");
     }
 
@@ -78,7 +78,8 @@ public class BeholderAI : MonoBehaviour
         if (isDead) return;
 
         redLaser.GetComponent<LineRenderer>().SetColors(Color.green, Color.green);
-        greenLaser.SetActive(true);
+        Invoke("SetActive", 2f);
+
         animator.Play("Beholder_GreenLaser");
     }
 
@@ -87,7 +88,13 @@ public class BeholderAI : MonoBehaviour
         if (isDead) return;
 
         redLaser.GetComponent<LineRenderer>().SetColors(Color.blue, Color.blue);
-        blueLaser.SetActive(true);
+        Invoke("SetActive", 2f);
+
         animator.Play("Beholder_BlueLaser");
+    }
+
+    private void SetActive()
+    {
+        redLaser.SetActive(true);
     }
 }

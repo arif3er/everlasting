@@ -26,11 +26,15 @@ public class BuzzAI : MonoBehaviour
     private Seeker seeker;
     private Rigidbody2D rb;
 
+    public AudioClip[] npcSounds;
+    private AudioSource audioSource;
+
     private void Start()
     {
         npcStats = GetComponent<NpcStats>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
 
         InvokeRepeating("UpdatePath", 0f, .5f);
     }
@@ -136,6 +140,7 @@ public class BuzzAI : MonoBehaviour
         if ((Vector2.Distance(transform.position, player.position) < attackRange) && !isCooldown)
         {
             CalculateLookAt();
+            PlayAttackSound();
             animator.Play("Buzz_Attack");
             Invoke("Attack", 0.3f);
             Invoke("ResetCooldown", attackSpeed);
@@ -172,5 +177,11 @@ public class BuzzAI : MonoBehaviour
     void ResetCooldown()
     {
         isCooldown = false;
+    }
+
+    void PlayAttackSound()
+    {
+        audioSource.clip = npcSounds[0];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }
