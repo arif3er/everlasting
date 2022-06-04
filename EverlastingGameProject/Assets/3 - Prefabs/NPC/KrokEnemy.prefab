@@ -235,6 +235,7 @@ MonoBehaviour:
   attackRange: 1.75
   attackSpeed: 1
   attackSlowness: 1
+  patrolWaitTime: 0
 --- !u!114 &182446601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +253,7 @@ MonoBehaviour:
   animator: {fileID: 1663602747}
   health: 250
   currentHealth: 0
+  deathTimeOut: 0
   isDead: 0
 --- !u!1 &3813840287121484451
 GameObject:
@@ -329,7 +331,7 @@ SpriteRenderer:
   m_SortingOrder: 2
   m_Sprite: {fileID: -751454671, guid: d1a77a95b8acc844d864ec96aaa9e5a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
