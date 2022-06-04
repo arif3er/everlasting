@@ -13,8 +13,13 @@ public class CharacterController : MonoBehaviour
    private Rigidbody2D myRB;
    private Vector2 movement;
    public Animator animator;
+   
 
-   public void Start()
+   
+
+
+
+    public void Start()
    {
         GameObject[] arr = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject obj in arr)

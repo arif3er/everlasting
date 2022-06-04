@@ -107,7 +107,7 @@ TextureImporter:
       name: Buttons_0
       rect:
         serializedVersion: 2
-        x: 6
+        x: 5
         y: 309
         width: 115
         height: 41
@@ -128,8 +128,8 @@ TextureImporter:
       name: Buttons_1
       rect:
         serializedVersion: 2
-        x: 152
-        y: 315
+        x: 150
+        y: 313
         width: 49
         height: 32
       alignment: 0
