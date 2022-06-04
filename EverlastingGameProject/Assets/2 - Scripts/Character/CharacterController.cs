@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+   
+   
    public float speedBuff = 4f;
    private float currentSpeed;
    
@@ -16,9 +18,9 @@ public class CharacterController : MonoBehaviour
    private Vector2 movement;
    public Animator animator;
 
-   public float direction;
-
-   public CharacterStats characterStats;
+   private float direction;
+   [SerializeField]
+   private CharacterStats characterStats;
    public Transform attackPoint;
    public Transform attackPointRight;
    public Transform attackPointLeft;
@@ -104,7 +106,6 @@ public class CharacterController : MonoBehaviour
          characterStats.characterSpeed = currentSpeed;
       }
 
-      
       
       
    }
