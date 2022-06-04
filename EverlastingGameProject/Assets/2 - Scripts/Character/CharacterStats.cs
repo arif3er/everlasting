@@ -8,6 +8,7 @@ public class CharacterStats : MonoBehaviour
     private bool inDead;
     public Animator animator;
 
+    public float characterSpeed = 2f;
     public float maxHealth = 100f;
     public float currentHealth;
 
@@ -30,6 +31,7 @@ public class CharacterStats : MonoBehaviour
 
     public void TakeDamage(float minDamage, float maxDamage)
     {
+        animator.Play("Hurt");
         float damage = Random.Range(minDamage, maxDamage);
         currentHealth -= damage;
     }
@@ -38,6 +40,5 @@ public class CharacterStats : MonoBehaviour
     {
         animator.SetBool("Death",true);
         inDead = true;
-        Debug.Log("Öldün Kardeş");
     }
 }
