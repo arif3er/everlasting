@@ -32,6 +32,8 @@ public class BlueLaser : MonoBehaviour
 
         lineRenderer.SetPosition(1, player.position);
 
+        firePoint.right = player.position - firePoint.position;
+
         Vector2 direction = player.position - firePoint.position;
         RaycastHit2D hit = Physics2D.Raycast((Vector2)firePoint.position, direction.normalized, direction.magnitude);
 

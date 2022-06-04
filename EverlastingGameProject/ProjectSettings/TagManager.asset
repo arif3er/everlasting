@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Collectible
   - Interactable
+  - EnemySFX
   layers:
   - Default
   - TransparentFX
