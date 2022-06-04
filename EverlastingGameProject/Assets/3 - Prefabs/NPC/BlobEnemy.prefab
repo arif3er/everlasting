@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2599041331611651402}
   - component: {fileID: 2599041331611651393}
   - component: {fileID: 909297571}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlobEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2599041332260813093}
   - component: {fileID: 2599041332260813092}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 2599041333185442505}
   - component: {fileID: 2599041333185442507}
   - component: {fileID: 2599041333185442504}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BlobGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

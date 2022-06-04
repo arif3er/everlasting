@@ -8,17 +8,24 @@ public class BlueLaser : MonoBehaviour
     public LineRenderer lineRenderer;
 
     public Transform firePoint;
-    public Transform player;
+    private Transform player;
+    public GameObject startVFX;
+    public GameObject endVFX;
 
     public float blueLaserMinDamage;
     public float blueLaserMaxDamage;
 
     private bool isHitting = false;
 
+    private List<ParticleSystem> particles = new List<ParticleSystem>();
+
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         characterStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         StartCoroutine("DealDamage");
+
+        FillLists();
     }
 
     void Update()
@@ -28,7 +35,13 @@ public class BlueLaser : MonoBehaviour
 
     private void UpdateLaser()
     {
-        lineRenderer.SetPosition(0, firePoint.position);
+        for (int i = 0; i < particles.Count; i++)
+        {
+            particles[i].Play();
+        }
+
+        lineRenderer.SetPosition(0, (Vector2)firePoint.position);
+        startVFX.transform.position = (Vector2)firePoint.position;
 
         lineRenderer.SetPosition(1, player.position);
 
@@ -43,6 +56,8 @@ public class BlueLaser : MonoBehaviour
 
             lineRenderer.SetPosition(1, hit.point);
         }
+
+        endVFX.transform.position = lineRenderer.GetPosition(1);
     }
 
     IEnumerator DealDamage()
@@ -55,5 +70,26 @@ public class BlueLaser : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         StartCoroutine("DealDamage");
+    }
+    
+    void FillLists()
+    {
+        for (int i = 0; i < startVFX.transform.childCount; i++)
+        {
+            var pos = startVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
+            if (pos != null)
+            {
+                particles.Add(pos);
+            }
+        }
+
+        for (int i = 0; i < endVFX.transform.childCount; i++)
+        {
+            var pos = endVFX.transform.GetChild(i).GetComponent<ParticleSystem>();
+            if (pos != null)
+            {
+                particles.Add(pos);
+            }
+        }
     }
 }

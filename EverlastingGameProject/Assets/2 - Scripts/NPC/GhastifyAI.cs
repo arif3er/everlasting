@@ -3,10 +3,10 @@ using Pathfinding;
 
 public class GhastifyAI : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public Transform enemyGFX;
     public Animator animator;
-    public CharacterStats characterStats;
+    private CharacterStats characterStats;
     private NpcStats npcStats;
 
     public float speed = 200f;
@@ -37,6 +37,8 @@ public class GhastifyAI : MonoBehaviour
             Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        characterStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
         npcStats = GetComponent<NpcStats>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();

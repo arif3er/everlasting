@@ -3,7 +3,7 @@ using Pathfinding;
 
 public class BuzzAI : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public Transform enemyGFX;
     public Transform firePosition;
     public Animator animator;
@@ -31,6 +31,7 @@ public class BuzzAI : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         npcStats = GetComponent<NpcStats>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();

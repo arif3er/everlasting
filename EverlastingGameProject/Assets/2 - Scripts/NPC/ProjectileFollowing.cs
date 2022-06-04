@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileFollowing : CharacterStats
+public class ProjectileFollowing : MonoBehaviour
 {
     public float speed;             // Merminin hareket hizi
     public float startFollowTime;   // Merminin havadaki yasam suresi (baslangicta ayarlanan referans degisken)
@@ -12,7 +12,9 @@ public class ProjectileFollowing : CharacterStats
     public float maxDamage;
 
     private Transform player;       // Player'in koordinati
-    public CharacterStats characterStats;
+    private CharacterStats characterStats;
+
+    private Animator animator;
     
     private void OnEnable()
     {
@@ -21,19 +23,24 @@ public class ProjectileFollowing : CharacterStats
 
     void Start()
     {
+        characterStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();
+        animator = GetComponentInChildren<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         followTime = startFollowTime;
     }
 
     void Update()
     {
+        animator.SetBool("OnAir", true);
+
         // Mermi Player'a dogru g�d�ml� olarak hareket eder.
         transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
 
         // Havadaki yasam suresini tamamladiysa mermi silinir, 
         if (followTime <= 0)
         {
-            DisableProjectile();
+            animator.Play("ProjectileBlow");
+            Invoke("DestroyProjectile", 0.2f);
 
             followTime = startFollowTime;
         } else
@@ -48,16 +55,18 @@ public class ProjectileFollowing : CharacterStats
         if (collision.CompareTag("Player"))
         {
             characterStats.TakeDamage(minDamage,maxDamage);
-            DisableProjectile();
+            animator.Play("ProjectileBlow");
+            Invoke("DestroyProjectile", 0.2f);
         } else if (collision.CompareTag("Obstacle"))
         {
-            DisableProjectile();
+            animator.Play("ProjectileBlow");
+            Invoke("DestroyProjectile", 0.2f);
         }
     }
 
-    private void DisableProjectile()
+    private void DestroyProjectile()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 
     private void OnDisable()

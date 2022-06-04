@@ -11,7 +11,6 @@ public class BeholderAI : MonoBehaviour
     public Transform firePoint;
 
     public GameObject redLaser;
-    public GameObject greenLaser;
     public GameObject blueLaser;
 
     public float blueLaserDamage;
@@ -21,6 +20,8 @@ public class BeholderAI : MonoBehaviour
     public int attackIndex;
 
     public bool isDead = false;
+
+    public GameObject projectile;
 
     private void Start()
     {
@@ -35,6 +36,8 @@ public class BeholderAI : MonoBehaviour
 
     private void Stun()
     {
+        redLaser.SetActive(false);
+
         if (isDead) return;
 
         hitBox.enabled = true;
@@ -54,7 +57,7 @@ public class BeholderAI : MonoBehaviour
         }
         else if (attackIndex == 2)
         {
-            FireGreenLaser();
+            SpawnProjectile();
         }
         else if (attackIndex == 3)
         {
@@ -68,17 +71,18 @@ public class BeholderAI : MonoBehaviour
     {
         if (isDead) return;
 
-        redLaser.GetComponent<LineRenderer>().SetColors(Color.red, Color.red);
-        Invoke("SetActive", 2f);
+        redLaser.SetActive(true);
         animator.Play("Beholder_RedLaser");
     }
 
-    private void FireGreenLaser()
+    private void SpawnProjectile()
     {
         if (isDead) return;
 
-        redLaser.GetComponent<LineRenderer>().SetColors(Color.green, Color.green);
-        Invoke("SetActive", 2f);
+        for (int i = 0; i <3; i++)
+        {
+            Invoke("Spawn", i);
+        }
 
         animator.Play("Beholder_GreenLaser");
     }
@@ -87,14 +91,15 @@ public class BeholderAI : MonoBehaviour
     {
         if (isDead) return;
 
-        redLaser.GetComponent<LineRenderer>().SetColors(Color.blue, Color.blue);
-        Invoke("SetActive", 2f);
+        redLaser.SetActive(true);
 
         animator.Play("Beholder_BlueLaser");
     }
 
-    private void SetActive()
+    private void Spawn()
     {
-        redLaser.SetActive(true);
+            GameObject prj = Instantiate(projectile, firePoint);
+            prj.transform.parent = null;
+            prj.transform.position = firePoint.position;
     }
 }
