@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -40,5 +42,23 @@ public class CharacterStats : MonoBehaviour
     {
         animator.SetBool("Death",true);
         inDead = true;
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(this);
+    }
+
+    public void LoadPlayer()
+    {
+        PlayerData playerData = SaveSystem.LoadPlayer();
+
+        currentHealth = playerData.health;
+
+        Vector3 position;
+        position.x = playerData.position[0];
+        position.y = playerData.position[1];
+        position.z = playerData.position[2];
+        transform.position = position;
     }
 }

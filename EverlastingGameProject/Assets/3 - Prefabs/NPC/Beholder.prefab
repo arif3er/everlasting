@@ -39046,7 +39046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3276384433123405195
 Transform:
   m_ObjectHideFlags: 0
@@ -39118,13 +39118,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3276384432603482416}
   firePoint: {fileID: 3276384432690094357}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   redLaser: {fileID: 1617193899}
   blueLaser: {fileID: 3276384433313994205}
-  blueLaserDamage: 20
-  redLaserDamage: 40
-  greenLaserDamage: 50
+  minionBlob: {fileID: 2599041331611651403, guid: ebf87b8f349dfdc4ca3d18d9057f3107, type: 3}
+  minionGhast: {fileID: 5018322690449134272, guid: 4b2a04d87ca61a946b572fd26b6c4554, type: 3}
   attackIndex: 0
-  isDead: 0
   projectile: {fileID: 1002235373680322768, guid: 301fc9f6572fa4f42a3c350ff15db1e0, type: 3}
   npcSounds:
   - {fileID: 8300000, guid: b33f1c245e40da9459e8357bf77c7b85, type: 3}
@@ -39145,7 +39149,7 @@ MonoBehaviour:
   minDamage: 0
   maxDamage: 0
   animator: {fileID: 3276384432603482416}
-  health: 500
+  health: 750
   currentHealth: 0
   deathTimeOut: 3
   isDead: 0

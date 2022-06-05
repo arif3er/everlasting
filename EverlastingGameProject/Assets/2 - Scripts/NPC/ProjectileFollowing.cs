@@ -16,11 +16,6 @@ public class ProjectileFollowing : MonoBehaviour
 
     private Animator animator;
     
-    private void OnEnable()
-    {
-        Invoke("DisableProjectile", 2f);
-    }
-
     void Start()
     {
         characterStats = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterStats>();

@@ -335,7 +335,7 @@ MonoBehaviour:
   animator: {fileID: 5766448725280819773}
   speed: 150
   nextWaypointDistance: 1.5
-  aggroDistance: 7
+  aggroDistance: 10
   attackRange: 1
   attackSpeed: 2
   attackSlowness: 0.5

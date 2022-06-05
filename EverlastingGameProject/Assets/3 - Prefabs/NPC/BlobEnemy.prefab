@@ -116,13 +116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e8c5b7b9ebcf94688983ec81366568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   enemyGFX: {fileID: 2599041333185442505}
   animator: {fileID: 2599041333185442504}
-  characterStats: {fileID: 0}
   speed: 200
   nextWaypointDistance: 1.4
-  aggroDistance: 5
+  aggroDistance: 10
   attackRange: 0.6
   attackSpeed: 2.5
   attackSlowness: 0.2
