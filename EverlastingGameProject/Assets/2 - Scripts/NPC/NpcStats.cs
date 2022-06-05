@@ -69,7 +69,6 @@ public class NpcStats : MonoBehaviour
     private void LoadEnemy()
     {
         int dead = PlayerPrefs.GetInt(gameObject.name + "_dead");
-        Debug.Log(health);
         if (dead == 1)
         {
             Destroy(gameObject);
