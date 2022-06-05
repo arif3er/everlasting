@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-   
+   [SerializeField] private CharacterSounds sounds;
    
    public float speedBuff = 4f;
    private float currentSpeed;
@@ -96,6 +96,10 @@ public class CharacterController : MonoBehaviour
       {
          ChangeWeapon();
       }
+      if (Input.GetKeyDown(KeyCode.F2))
+      {
+         TorchOnOff();
+      }
 
       if (Input.GetKey(KeyCode.LeftShift))
       {
@@ -124,6 +128,18 @@ public class CharacterController : MonoBehaviour
       else
       {
          animator.SetFloat("ChangeWeapon", -1f); 
+      }
+   }
+   private void TorchOnOff()
+   {
+      sounds.TorchSound();
+      if (animator.GetFloat("Torch") == 0f)
+      {
+         animator.SetFloat("Torch", 1f);
+      }
+      else
+      {
+         animator.SetFloat("Torch", 0f); 
       }
    }
 

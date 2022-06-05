@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class CharacterSounds : MonoBehaviour
 {
+    [SerializeField] private Torch torchSound;
     private int footstep = 0;
 
+    public AudioClip die;
+    public AudioClip pain;
     public AudioClip swooshAxe;
     public AudioClip[] swooshSounds;
     public AudioClip[] stepSounds;
@@ -44,4 +47,21 @@ public class CharacterSounds : MonoBehaviour
         audioSource.clip = swooshAxe;
         audioSource.PlayOneShot(audioSource.clip);
     }
+    public void PlayPainSound()
+    {
+        audioSource.clip = pain;
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+    public void PlayDeathSound()
+    {
+        audioSource.clip = die;
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+    public void TorchSound()
+    {
+        torchSound.TurnOnOfTorch();
+    }
+
+    
+    
 }
