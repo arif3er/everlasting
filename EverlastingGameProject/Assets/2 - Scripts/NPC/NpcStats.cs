@@ -21,6 +21,8 @@ public class NpcStats : MonoBehaviour
     {
         currentHealth = health;
         audioSource = GetComponentInChildren<AudioSource>();
+        PlayerPrefs.SetInt(gameObject.name + "_dead", 0);
+        LoadEnemy();
     }
 
     private void Update()
@@ -40,7 +42,7 @@ public class NpcStats : MonoBehaviour
         animator.Play("Hurt");
         float damage = Random.Range(minDamage, maxDamage);
         currentHealth -= damage;
-        
+        SaveEnemy();
     }
 
     void PlayHurtSound()
@@ -57,5 +59,20 @@ public class NpcStats : MonoBehaviour
     private void DestroyNPC()
     {
         Destroy(gameObject);
+    }
+
+    private void SaveEnemy()
+    {
+        PlayerPrefs.SetInt(gameObject.name + "_dead", currentHealth <= 0 ? 1 : 0);
+    }
+
+    private void LoadEnemy()
+    {
+        int dead = PlayerPrefs.GetInt(gameObject.name + "_dead");
+        Debug.Log(health);
+        if (dead == 1)
+        {
+            Destroy(gameObject);
+        }
     }
 }

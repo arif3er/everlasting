@@ -23,10 +23,15 @@ public class BeholderAI : MonoBehaviour
 
     public GameObject projectile;
 
+    public AudioClip[] npcSounds;
+    private AudioSource audioSource;
+
     private void Start()
     {
         hitBox = GetComponent<Collider2D>();
+        audioSource = GetComponent<AudioSource>();
         Intro();
+        PlayIntroSound();
     }
 
     public void Intro()
@@ -37,6 +42,7 @@ public class BeholderAI : MonoBehaviour
     private void Stun()
     {
         redLaser.SetActive(false);
+        blueLaser.SetActive(false);
 
         if (isDead) return;
 
@@ -71,7 +77,11 @@ public class BeholderAI : MonoBehaviour
     {
         if (isDead) return;
 
+        PlayLaserSound();
+        Invoke("PlayLaserSound", 2.8f);
+
         redLaser.SetActive(true);
+
         animator.Play("Beholder_RedLaser");
     }
 
@@ -81,6 +91,7 @@ public class BeholderAI : MonoBehaviour
 
         for (int i = 0; i <3; i++)
         {
+            Invoke("PlayProjectileSound", i);
             Invoke("Spawn", i);
         }
 
@@ -91,15 +102,36 @@ public class BeholderAI : MonoBehaviour
     {
         if (isDead) return;
 
-        redLaser.SetActive(true);
+        PlayLaserSound();
+        Invoke("PlayLaserSound", 2.8f);
+
+        blueLaser.SetActive(true);
 
         animator.Play("Beholder_BlueLaser");
     }
 
     private void Spawn()
     {
-            GameObject prj = Instantiate(projectile, firePoint);
-            prj.transform.parent = null;
-            prj.transform.position = firePoint.position;
+         GameObject prj = Instantiate(projectile, firePoint);
+         prj.transform.parent = null;
+         prj.transform.position = firePoint.position;
+    }
+
+    void PlayProjectileSound()
+    {
+        audioSource.clip = npcSounds[0];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+
+    void PlayLaserSound()
+    {
+        audioSource.clip = npcSounds[1];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+
+    void PlayIntroSound()
+    {
+        audioSource.clip = npcSounds[2];
+        audioSource.PlayOneShot(audioSource.clip);
     }
 }
