@@ -43,6 +43,8 @@ public class BeholderAI : MonoBehaviour
 
         Intro();
         PlayIntroSound();
+        PlayBeholderThemeSound();
+        Invoke("PlayBeholderThemeSound", 129f);
     }
 
     private void Update()
@@ -127,7 +129,6 @@ public class BeholderAI : MonoBehaviour
 
         PlayLaserSound();
         Invoke("PlayLaserSound", 2.8f);
-
 
         redLaser.SetActive(true);
 
@@ -277,6 +278,12 @@ public class BeholderAI : MonoBehaviour
     void PlayGhastifySummonSound()
     {
         audioSource.clip = npcSounds[4];
+        audioSource.PlayOneShot(audioSource.clip);
+    }
+
+    void PlayBeholderThemeSound()
+    {
+        audioSource.clip = npcSounds[5];
         audioSource.PlayOneShot(audioSource.clip);
     }
 

@@ -62,7 +62,7 @@ public class BlueLaser : MonoBehaviour
 
     IEnumerator DealDamage()
     {
-        if (isHitting)
+        if (isHitting && lineRenderer.gameObject.activeSelf)
         {
             characterStats.TakeDamage(blueLaserMinDamage, blueLaserMaxDamage);
         }
