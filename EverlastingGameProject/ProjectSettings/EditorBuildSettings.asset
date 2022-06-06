@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/1 - Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/1 - Scenes/RealScenes/ZeminKatScene.unity
+    guid: a02e48493b4c20d469b770e74c3e4396
+  - enabled: 1
+    path: "Assets/1 - Scenes/RealScenes/\u0130kinciKatScene.unity"
+    guid: 7ef1f8abcfc23654b88090ca66458fa6
   m_configObjects: {}

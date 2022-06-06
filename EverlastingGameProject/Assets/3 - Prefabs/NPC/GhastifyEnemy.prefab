@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650650314}
   - component: {fileID: 650650315}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1911546454753562482}
   - component: {fileID: 2594470796328483955}
   - component: {fileID: 5766448725280819773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GhastifyGFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 2241533543645249575}
   - component: {fileID: 5798111402273422656}
   - component: {fileID: 2052959957}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GhastifyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -331,13 +331,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68f53b707be77794d9ff6de31c457d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   enemyGFX: {fileID: 1911546454753562482}
   animator: {fileID: 5766448725280819773}
-  characterStats: {fileID: 0}
   speed: 150
   nextWaypointDistance: 1.5
-  aggroDistance: 7
+  aggroDistance: 10
   attackRange: 1
   attackSpeed: 2
   attackSlowness: 0.5
