@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7901481330680329149}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &748489495
 GameObject:
@@ -63,7 +63,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7901481330680329149}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &748489499
 Camera:
@@ -178,7 +178,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7901481330680329149}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182050241
 GameObject:
@@ -211,7 +211,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7901481330680329149}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1182050244
 AudioSource:
@@ -349,11 +349,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400605799}
   m_LocalRotation: {x: -0, y: -0, z: -0.0034146332, w: 0.99999416}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.35199994, y: 0.6489998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7901481330680329149}
+  m_Father: {fileID: 2911571639626939050}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1400605801
@@ -371,9 +371,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.58
+  m_FalloffIntensity: 0.611
   m_Color: {r: 0.9339623, g: 0.7393246, b: 0.60267, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -422,7 +422,7 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 1.52
+  m_PointLightInnerRadius: 1.61
   m_PointLightOuterRadius: 5.1458054
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
@@ -447,14 +447,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   repeatTime: 0.1
-  minIntensity: 0.7
-  maxIntensity: 0.75
+  minIntensity: 1.5
+  maxIntensity: 1.5
   minInnerRadius: 0.8
   maxInnerRadius: 0.85
-  minOuterRadius: 3.5
-  maxOuterRadius: 3.6
+  minOuterRadius: 3.8
+  maxOuterRadius: 3.9
   minFalloffStrength: 0.45
-  maxFalloffStrength: 0.6
+  maxFalloffStrength: 0.65
 --- !u!1 &1401390150
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +484,39 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7901481330680329149}
-  m_RootOrder: 4
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5400790523563386167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2911571639626939050}
+  m_Layer: 8
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2911571639626939050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5400790523563386167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1400605800}
+  m_Father: {fileID: 7901481330680329149}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8955881549337617739
 GameObject:
@@ -522,12 +554,12 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1400605800}
   - {fileID: 748489496}
   - {fileID: 576749820}
   - {fileID: 1012174012}
   - {fileID: 1401390151}
   - {fileID: 1182050242}
+  - {fileID: 2911571639626939050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -634,8 +666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8670592450769998405}
   characterSpeed: 2
-  maxHealth: 10000
-  currentHealth: 0
+  maxHealth: 200
+  currentHealth: 200
   minAxeDamage: 30
   maxAxeDamage: 50
   minSwordDamage: 15
@@ -664,6 +696,7 @@ MonoBehaviour:
   attackPoint: {fileID: 576749820}
   attackPointRight: {fileID: 1401390151}
   attackPointLeft: {fileID: 1012174012}
+  torch: {fileID: 5400790523563386167}
   attackRange: 0.5
   enemyLayers:
     serializedVersion: 2

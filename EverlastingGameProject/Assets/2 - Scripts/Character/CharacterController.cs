@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CharacterController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class CharacterController : MonoBehaviour
    public Transform attackPoint;
    public Transform attackPointRight;
    public Transform attackPointLeft;
+    public GameObject torch;
    public float attackRange = 0.5f;
    public LayerMask enemyLayers;
 
@@ -162,10 +164,13 @@ public class CharacterController : MonoBehaviour
       if (animator.GetFloat("Torch") == 0f)
       {
          animator.SetFloat("Torch", 1f);
-      }
-      else
+            torch.SetActive(true);
+
+        }
+        else
       {
-         animator.SetFloat("Torch", 0f); 
+         animator.SetFloat("Torch", 0f);
+         torch.SetActive(false);
       }
    }
 

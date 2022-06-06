@@ -46432,7 +46432,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 0.8665065, g: 0.80532223, b: 0.9339623, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -48069,54 +48069,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1400605800, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.352
+    - target: {fileID: 5400790523563386167, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1400605800, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.649
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400605801, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: m_Intensity
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400605801, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: m_FalloffIntensity
-      value: 0.611
-      objectReference: {fileID: 0}
-    - target: {fileID: 1400605801, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: m_PointLightInnerRadius
-      value: 1.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924384590, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: maxIntensity
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924384590, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: minIntensity
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924384590, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: maxOuterRadius
-      value: 3.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924384590, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: minOuterRadius
-      value: 3.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1924384590, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: maxFalloffStrength
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 436708747074310701, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: maxHealth
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 436708747074310701, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
-      propertyPath: currentHealth
-      value: 200
-      objectReference: {fileID: 0}
+    - target: {fileID: 6518603600585854829, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
+      propertyPath: torch
+      value: 
+      objectReference: {fileID: 1695799007}
     - target: {fileID: 7901481330680329149, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -48178,6 +48138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361a21a38147f104f9967e71f03e0965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1695799007 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5400790523563386167, guid: 5625a9f1d6ce2234c97c56f123ee1edb, type: 3}
+  m_PrefabInstance: {fileID: 1695799005}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714810637
 GameObject:
   m_ObjectHideFlags: 0
