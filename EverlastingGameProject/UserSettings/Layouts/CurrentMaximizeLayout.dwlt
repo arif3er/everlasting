@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 341.6
     height: 442.4
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -224,8 +224,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a6c2feff
-      m_LastClickedID: -81242
+      m_SelectedIDs: ca6f0000
+      m_LastClickedID: 0
       m_ExpandedIDs: 1ac0feffa6c2feffb4c3feff20c7feffc0cefeffaecffeffc4d2feff5ed3feff30d6feff34d8fefffed9feffaadcfeff2ae6feff3ae9feff1eedfeff12f3feff2af8feffccfbfeff70fdfeff1efffeffa801ffff980affffae0dffff9215ffff5828ffffda2bffff402dffffa833ffff123bffff2644ffff8252ffff4855ffff4e58ffffc07cffff807effff4e80ffff5882ffff3a8bffffaa8dffff4291ffff7e94fffffc9effffcca2ffff88a3fffff8e9ffff00fbffffae610000386200006e62000094620000ca620000b8d400008cd6000024f00000def20000c0f4000048fc0000820301008c030100120d010084120100181501006a2e0100e03301007c360100d2460100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 844.80005
     height: 442.4
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 8}
@@ -954,24 +954,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: a6c2feff
-    m_LastClickedInstanceID: -81242
+    m_SelectedInstanceIDs: ca6f0000
+    m_LastClickedInstanceID: 28618
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a6870000928700008651000084510000905d0000fa9000008a9500008c600000ac970000a497000098970000c46a0000aa6b00003e660000f66b0000fc2a0000b82a00009673000098730000b462000000000000ae7a0000ce7a00001872000074310100686f0000c27000002e1802005c8600003e78000020810000486900003c620000f0660000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: ZeminKatScene
-      m_OriginalName: ZeminKatScene
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 28618
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
@@ -1063,8 +1063,8 @@ MonoBehaviour:
     y: 0
     width: 335.19995
     height: 716.4
-  m_MinSize: {x: 275, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
