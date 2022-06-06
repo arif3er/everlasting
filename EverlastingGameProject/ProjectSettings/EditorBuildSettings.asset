@@ -9,9 +9,27 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/1 - Scenes/RealScenes/AnaMenu.unity
+    guid: 81a8dfa1c8809084f97fe798c944a974
+  - enabled: 1
     path: Assets/1 - Scenes/RealScenes/ZeminKatScene.unity
     guid: a02e48493b4c20d469b770e74c3e4396
   - enabled: 1
+    path: Assets/1 - Scenes/RealScenes/BirinciKatScene.unity
+    guid: 08cd4d475b5337f4b95943da776b398c
+  - enabled: 1
+    path: "Assets/1 - Scenes/RealScenes/\xDC\xE7\xFCnc\xFCKatScene.unity"
+    guid: eb2be7175a906c341901c8c07eed577c
+  - enabled: 1
     path: "Assets/1 - Scenes/RealScenes/\u0130kinciKatScene.unity"
     guid: 7ef1f8abcfc23654b88090ca66458fa6
+  - enabled: 1
+    path: Assets/1 - Scenes/RealScenes/EksiBirinciKatScene.unity
+    guid: 9621985d38d9a21408c9ad5541e1d95c
+  - enabled: 1
+    path: "Assets/1 - Scenes/RealScenes/Eksi\u0130kinciKatScene.unity"
+    guid: ca71899de2287484b88792df7ea8f031
+  - enabled: 1
+    path: "Assets/1 - Scenes/RealScenes/D\xF6rd\xFCnc\xFCKatScene.unity"
+    guid: bc510fb1888f09a4d8610f8430954294
   m_configObjects: {}
