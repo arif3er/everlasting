@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/1 - Scenes/RealScenes/AnaMenu.unity
     guid: 81a8dfa1c8809084f97fe798c944a974
   - enabled: 1
+    path: Assets/1 - Scenes/RealScenes/IntroScene.unity
+    guid: 87ff2662c54e697428fdf4d7700b1620
+  - enabled: 1
     path: Assets/1 - Scenes/RealScenes/ZeminKatScene.unity
     guid: a02e48493b4c20d469b770e74c3e4396
   - enabled: 1
@@ -32,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/1 - Scenes/RealScenes/D\xF6rd\xFCnc\xFCKatScene.unity"
     guid: bc510fb1888f09a4d8610f8430954294
+  - enabled: 1
+    path: Assets/1 - Scenes/RealScenes/EndingScene.unity
+    guid: c7e393130f233154a9e9a88586589085
   m_configObjects: {}

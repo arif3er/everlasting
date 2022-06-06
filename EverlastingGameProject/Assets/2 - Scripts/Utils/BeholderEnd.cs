@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class BeholderEnd : MonoBehaviour
 {
     public GameObject beforeBossStart;
     public GameObject afterBossStart;
-
-    public Light2D globalLight;
 
     private NpcStats npcStats;
 
@@ -21,16 +16,14 @@ public class BeholderEnd : MonoBehaviour
     {
         if(npcStats.currentHealth <= 0)
         {
-            globalLight.intensity = 20;
-            beforeBossStart.SetActive(true);
-            afterBossStart.SetActive(false);
-            Invoke("ResetGlobalLight", 0.3f);
+            Invoke("ResetScene", 2f);
         }
     }
 
-    private void ResetGlobalLight()
+    private void ResetScene()
     {
-        globalLight.intensity = 0.3f;
+        beforeBossStart.SetActive(true);
+        afterBossStart.SetActive(false);
         Destroy(this);
     }
 }
