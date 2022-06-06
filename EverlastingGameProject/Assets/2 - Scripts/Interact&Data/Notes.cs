@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,12 +9,13 @@ public class Notes : MonoBehaviour
     public GameObject button;
     public Canvas canvas;
     public Text _text;
-    public Writings writings;
 
     private GameObject player;
 
     private bool pickUp;
-    private bool isOpen;
+    private bool isOpen = false;
+
+    public string lore;
 
     private void Start()
     {
@@ -23,12 +25,13 @@ public class Notes : MonoBehaviour
 
     private void Update()
     {
-        if (pickUp && Input.GetKeyDown(KeyCode.E))
+        if (!isOpen && pickUp && Input.GetKeyDown(KeyCode.E))
         {
             PickUp();
         }else if (isOpen && Input.GetKeyDown(KeyCode.E))
         {
             canvas.gameObject.SetActive(false);
+            isOpen = false;
         }
 
     }
@@ -54,7 +57,7 @@ public class Notes : MonoBehaviour
     void PickUp()
     {
         canvas.gameObject.SetActive(true);
-        _text.text = writings.lore;
+        _text.text = lore;
         isOpen = true;
     }
 }

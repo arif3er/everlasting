@@ -9,6 +9,7 @@ TagManager:
   - Collectible
   - Interactable
   - EnemySFX
+  - Note
   layers:
   - Default
   - TransparentFX
