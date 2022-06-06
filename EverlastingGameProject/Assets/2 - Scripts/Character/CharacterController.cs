@@ -6,6 +6,13 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
    [SerializeField] private CharacterSounds sounds;
+
+   private bool dashBool = false;
+
+   public float dashCoolDown = 1.5f;
+   private float dashCD = 0;
+   public float dashTime;
+   public float dashSpeed = 10f;
    
    public float speedBuff = 4f;
    private float currentSpeed;
@@ -52,6 +59,7 @@ public class CharacterController : MonoBehaviour
 
    private void Update()
    {
+      
       movement.x = Input.GetAxis("Horizontal");
       movement.y = Input.GetAxis("Vertical");
       
@@ -75,7 +83,7 @@ public class CharacterController : MonoBehaviour
          }
       }
 
-      if (Input.GetKey(KeyCode.Space))
+      if (Input.GetKey(KeyCode.Mouse0))
       {
          attackCounter = attackTime;
          animator.SetBool("Attack",true);
@@ -103,15 +111,32 @@ public class CharacterController : MonoBehaviour
 
       if (Input.GetKey(KeyCode.LeftShift))
       {
-         characterStats.characterSpeed = speedBuff;
+         if (dashBool == true)
+         {
+            characterStats.characterSpeed = dashSpeed;
+         }
+         else
+         {
+            characterStats.characterSpeed = speedBuff;
+         }
+         
       }
-      else
+      else if (Input.GetKeyUp(KeyCode.LeftShift))
       {
+         
          characterStats.characterSpeed = currentSpeed;
       }
-
       
-      
+      dashCD -= Time.deltaTime;
+      if (Input.GetKeyDown(KeyCode.Space) && dashCD <= 0)
+      {
+         StartCoroutine("Dash");
+         Invoke("DashOff",dashTime + 0.01f);
+         dashCD = dashCoolDown;
+         
+         
+      }
+     
    }
 
    private void FixedUpdate()
@@ -121,13 +146,14 @@ public class CharacterController : MonoBehaviour
 
    private void ChangeWeapon()
    {
-      if (animator.GetFloat("ChangeWeapon") == -1f)
+      characterStats.ChangeWeapon();
+      if (animator.GetFloat("ChangeWeapon") == 0f)
       {
          animator.SetFloat("ChangeWeapon", 1f);
       }
       else
       {
-         animator.SetFloat("ChangeWeapon", -1f); 
+         animator.SetFloat("ChangeWeapon", 0f); 
       }
    }
    private void TorchOnOff()
@@ -150,10 +176,34 @@ public class CharacterController : MonoBehaviour
       Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position,attackRange,enemyLayers);
       foreach (Collider2D enemy in hitEnemies)
       {
-         enemy.GetComponent<NpcStats>().TakeDamage(characterStats.minAttackDamge, characterStats.maxAttackDamge);
+         enemy.GetComponent<NpcStats>().TakeDamage(characterStats.minAttackDamage, characterStats.maxAttackDamage);
          
          
       }
+   }
+
+   IEnumerator Dash()
+   {
+      float timePassed =0f;
+      if (movement.x != 0 || movement.y != 0)
+      {
+         while (timePassed < dashTime)
+         {
+            dashBool = true;
+            animator.Play("Dash");
+            characterStats.characterSpeed = dashSpeed;
+            timePassed += Time.deltaTime;
+         }
+         yield return null;
+      }
+      
+
+      
+   }
+   void DashOff()
+   {
+      characterStats.characterSpeed =currentSpeed;
+      dashBool = false;
    }
 
    private void OnDrawGizmosSelected()
@@ -164,6 +214,8 @@ public class CharacterController : MonoBehaviour
       }
       Gizmos.DrawWireSphere(attackPoint.position,attackRange);
    }
+   
+   
 }
 
 

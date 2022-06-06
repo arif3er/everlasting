@@ -22,7 +22,7 @@ public class Interaction : MonoBehaviour
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             if(InteractInput())
             {
-                Debug.Log("Tetiklendi.");
+                Debug.Log("Triggered.");
                 
             }
         }

@@ -223,7 +223,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cce6f90ad5e148f4c99777cb5ed21c42, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cc97d2f63013b4597602d22bad6152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  torchSound: {fileID: 8300000, guid: cce6f90ad5e148f4c99777cb5ed21c42, type: 3}
   audioSource: {fileID: 1182050244}
 --- !u!1 &1400605799
 GameObject:
@@ -635,8 +636,12 @@ MonoBehaviour:
   characterSpeed: 2
   maxHealth: 10000
   currentHealth: 0
-  minAttackDamge: 30
-  maxAttackDamge: 40
+  minAxeDamage: 30
+  maxAxeDamage: 50
+  minSwordDamage: 15
+  maxSwordDamage: 30
+  minAttackDamage: 0
+  maxAttackDamage: 0
 --- !u!114 &6518603600585854829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,6 +655,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds: {fileID: 378602795}
+  dashCoolDown: 1.5
+  dashTime: 0.2
+  dashSpeed: 10
   speedBuff: 4
   animator: {fileID: 8670592450769998405}
   characterStats: {fileID: 436708747074310701}
@@ -673,6 +681,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torchSound: {fileID: 1182050243}
+  dash: {fileID: 8300000, guid: 03ce54a264b336a4db81eec4133f97db, type: 3}
   die: {fileID: 8300000, guid: f163f26a849809e448f1c5e6f67bbced, type: 3}
   pain: {fileID: 8300000, guid: e6167e6d0bff5e8428f6c3c9815d29ca, type: 3}
   swooshAxe: {fileID: 8300000, guid: 5492834db976986469337f3ee42cfd22, type: 3}
@@ -717,7 +726,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
